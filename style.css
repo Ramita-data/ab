@@ -1,0 +1,57 @@
+:root {
+  --bg: #0b0920;
+  --accent: #8b7cff;
+  --text: #fff;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+header {
+  text-align: center;
+  padding: 20px 10px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.05), transparent);
+}
+
+header h1 {
+  color: var(--accent);
+  margin: 0;
+}
+
+main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#phaser-root {
+  width: 100%;
+  height: 70vh;
+}
+
+#earn-section {
+  text-align: center;
+  padding: 20px;
+  background: rgba(255,255,255,0.04);
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+footer {
+  text-align: center;
+  font-size: 14px;
+  opacity: 0.7;
+  padding: 10px 0;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+#ad-section {
+  margin-top: 8px;
+}
