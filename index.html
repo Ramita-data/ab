@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>DreamPop Therapy — Advanced</title>
+
+  <meta name="theme-color" content="#8b7cff" />
+  <meta name="description" content="Relax, meditate, and enhance your mental wellness with DreamPop Therapy." />
+
+  <!-- Icons -->
+  <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="icon-512.png" />
+  <link rel="apple-touch-icon" href="icon-512.png" />
+
+  <!-- Manifest -->
+  <link rel="manifest" href="manifest.json" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Phaser -->
+  <script src="https://cdn.jsdelivr.net/npm/phaser@3.60.0/dist/phaser.min.js"></script>
+</head>
+
+<body>
+  <header>
+    <h1>DreamPop Therapy</h1>
+    <p>Relax • Focus • Heal</p>
+  </header>
+
+  <main id="game-container">
+    <div id="phaser-root"></div>
+  </main>
+
+  <section id="earn-section">
+    <!-- PayPal Donation -->
+    <h3>Support DreamPop Therapy 💖</h3>
+    <div id="paypal-button-container"></div>
+  </section>
+
+  <footer>
+    <p>© 2025 DreamPop Therapy | Wellness Game</p>
+    <div id="ad-section">
+      <!-- AdSense Placeholder -->
+      <p style="font-size:12px;opacity:0.7;">Ad space — coming soon...</p>
+    </div>
+  </footer>
+
+  <!-- PayPal SDK -->
+  <script src="https://www.paypal.com/sdk/js?client-id=AephZnZjt38R4oo-IvCVM_3FdRV9T4dHV7iH51gD-xT6_2Jnn1n327fk4NMnMWT59VNxzh1kIqXjG58A"></script>
+  <script>
+    paypal.Buttons({
+      createOrder: (data, actions) => actions.order.create({
+        purchase_units: [{ amount: { value: '1.00' } }]
+      }),
+      onApprove: (data, actions) => actions.order.capture().then(() => alert('Thank you for supporting DreamPop! 💜'))
+    }).render('#paypal-button-container');
+  </script>
+
+  <!-- Game Logic -->
+  <script src="app.js"></script>
+
+  <!-- Service Worker -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('service-worker.js')
+          .then(reg => console.log('Service Worker registered:', reg))
+          .catch(err => console.error('SW registration failed:', err));
+      });
+    }
+  </script>
+</body>
+</html>
